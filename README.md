@@ -4,14 +4,28 @@
 경부고속도로 일부 구간의 위험도 정보를 5분마다 크롤링해 화면으로 보여줍니다. 
 
 ---
-## ✨ 배포 화면
-| 메인 화면 | 도로 위험도 툴팁 |
-|-----------|------------------|
-| ![모니터링 화면](images/monitoring.PNG) | ![위험도 정보 툴팁](images/detail.PNG) | ![툴팁 내용](images/detail-message.PNG) |
 
-| 툴팁 상세 내용 | 도로 위험도 툴팁 |
-|-------------|-------------|
-| ![툴팁 내용](images/detail-message.PNG)| ![툴팁 내용](images/test.gif) |
+## ✨ 배포 화면
+
+<table>
+  <tr>
+    <td align="center"><strong>메인 화면</strong></td>
+    <td align="center"><strong>도로 위험도 툴팁</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="images/monitoring.PNG" width="400"/></td>
+    <td align="center"><img src="images/detail.PNG" width="400"/></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>툴팁 상세 내용</strong></td>
+    <td align="center"><strong>시연 화면</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="images/detail-message.PNG" width="400"/></td>
+    <td align="center"><img src="images/test.gif" width="400"/></td>
+  </tr>
+</table>
+
 ---
 
 ## 📁 디렉토리 구성
