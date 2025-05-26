@@ -109,8 +109,7 @@ kubectl logs job/road-risk-collector-cron-xxxxxxxx
   - `Service`: 클러스터 내 통신용 ClusterIP 서비스
 ---
 ### `python-collector-cronjob.yaml` 
-- 5분마다 갱신되는 공공데이터 포탈의 API에서 도로 위험도 데이터를 수집하여 DB에 저장하는 Python 수집기용 CronJob
-  - 공공데이터포털에서 도로 위험도 데이터를 주기적으로 수집하여 저장
+- 5분마다 갱신되는 공공데이터 포털의 API에서 도로 위험도 데이터를 수집하여 DB에 저장하는 Python 수집기용 CronJob
   - 성공/실패 잡 히스토리 관리 설정으로 리소스 과다 사용 방지
   - 별도의 Deployment/Service 없이 주기 실행만을 위해 존재
 ---
