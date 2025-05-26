@@ -1,0 +1,73 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-initdb-config
+data:
+  init.sql: |-
+    CREATE DATABASE IF NOT EXISTS dangerDB CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+    USE dangerDB;
+
+    CREATE TABLE IF NOT EXISTS road_risk_data (
+        idx VARCHAR(100) COMMENT '표시용 순번 (item.get("index") 값)',
+        highwayName VARCHAR(255) COMMENT '고속도로 이름',
+        segmentName VARCHAR(255) COMMENT '구간 이름',
+        start_lat DOUBLE COMMENT '구간 시작 지점의 위도',
+        start_lng DOUBLE COMMENT '구간 시작 지점의 경도',
+        end_lat DOUBLE COMMENT '구간 종료 지점의 위도',
+        end_lng DOUBLE COMMENT '구간 종료 지점의 경도',
+        anals_value DOUBLE COMMENT '구간 도로 위험도 지수값',
+        anals_grd VARCHAR(20) COMMENT '도로 위험도 등급',
+        updated_at TIMESTAMP COMMENT '데이터 수집 또는 갱신 시각 (UTC 기준)'
+    ) COMMENT = '고속도로 구간별 도로 위험도 정보 저장 테이블';
+
+    FLUSH PRIVILEGES;
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8.0
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: rootpassword
+          - name: MYSQL_USER
+            value: kopouser
+          - name: MYSQL_PASSWORD
+            value: kopouser
+          - name: MYSQL_DATABASE
+            value: dangerDB
+        ports:
+          - containerPort: 3306
+        volumeMounts:
+          - name: mysql-initdb
+            mountPath: /docker-entrypoint-initdb.d/init.sql
+            subPath: init.sql
+      volumes:
+        - name: mysql-initdb
+          configMap:
+            name: mysql-initdb-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: mysql
+  type: ClusterIP
+
