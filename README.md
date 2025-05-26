@@ -8,6 +8,7 @@
 | 메인 화면 | 도로 위험도 툴팁 |
 |-----------|------------------|
 | ![모니터링 화면](images/monitoring.PNG) | ![위험도 정보 툴팁](images/detail.PNG) | ![툴팁 내용](images/detail-message.PNG) |
+
 | 툴팁 상세 내용 | 도로 위험도 툴팁 |
 |-------------|-------------|
 | ![툴팁 내용](images/detail-message.PNG)| ![툴팁 내용](images/test.gif) |
