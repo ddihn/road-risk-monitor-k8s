@@ -3,20 +3,19 @@ kind: CronJob
 metadata:
   name: road-risk-collector-cron
 spec:
-  schedule: "*/5 * * * *"  # 매 5분마다 실행
-  successfulJobsHistoryLimit: 3  # 성공한 잡은 최대 3개까지만 보관
-  failedJobsHistoryLimit: 1      # 실패한 잡은 최대 1개까지만 보관
+  schedule: "*/5 * * * *" # 매 5분마다 실행
+  successfulJobsHistoryLimit: 3 # 성공한 잡은 최대 3개까지만 보관
+  failedJobsHistoryLimit: 1 # 실패한 잡은 최대 1개까지만 보관
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: python-collector
-            image: yooncount/road-risk-monitor-python-collector:latest
-            imagePullPolicy: Always
-            # 필요시 환경변수 추가 가능
-            # env:
-            #   - name: SOME_ENV
-            #     value: "value"
+            - name: python-collector
+              image: yooncount/road-risk-monitor-python-collector:latest
+              imagePullPolicy: Always
+              # 필요시 환경변수 추가 가능
+              # env:
+              #   - name: SOME_ENV
+              #     value: "value"
           restartPolicy: OnFailure
-
