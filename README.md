@@ -95,8 +95,8 @@ kubectl logs job/road-risk-collector-cron-xxxxxxxx
 ---
 ### `mysql.yaml`
 - MySQL 데이터베이스 배포
-- Persistent Volume을 사용한 데이터 영속화
 - 사용자 계정 및 초기 데이터베이스 생성 포함
+- Persistent Volume을 사용한 데이터 영속화 예정
 ---
 ### `road-risk-monitor.yaml`
 - 도로 위험도 모니터링 시스템을 위한 주요 컴포넌트(백엔드 API, 프론트엔드)의 Kubernetes 리소스를 한 번에 배포할 수 있는 통합 매니페스트
