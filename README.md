@@ -16,7 +16,7 @@
     <td align="center"><strong>시스템 구성도</strong></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/sys.PN" width="825"/></td>
+    <td align="center"><img src="images/system.PNG" width="825"/></td>
   </tr>
   </table>
 ## ✨ 배포 화면
