@@ -10,7 +10,15 @@
 > **출처:** [도로위험지수 OpenAPI](https://www.data.go.kr/data/15057452/openapi.do)
 
 ---
-
+## 시스템 구성도
+<table>
+<tr>
+    <td align="center"><strong>시스템 구성도</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="images/sys.PNG" width="825"/></td>
+  </tr>
+  </table>
 ## ✨ 배포 화면
 
 <table>
